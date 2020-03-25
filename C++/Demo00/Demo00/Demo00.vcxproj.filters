@@ -24,5 +24,20 @@
     <ClCompile Include="demo02(flower).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="demo03(for).cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="demo04.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="demo05.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="demo06.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="demo07%28bubble%29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
