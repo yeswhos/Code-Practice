@@ -7,5 +7,8 @@ public class Demo01Main {
         System.out.println("======================");
         Demo00.Demo00Inner inner = new Demo00().new Demo00Inner();
         inner.Inner();
+        System.out.println("======================");
+        Demo02.Inner inner1 = new Demo02().new Inner();
+        inner1.Method();
     }
 }
