@@ -10,6 +10,7 @@ print('set', list1)
 
 set1 = set(list1)
 print(len(set1))
+
 set1.add(6)
 set1.remove(4)
 print(set1)
