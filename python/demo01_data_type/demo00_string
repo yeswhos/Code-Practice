@@ -1,0 +1,2 @@
+tuple = ('Fanhui', 23, 170.2)
+print('%s 年龄为 %d 身高是 %2f' % tuple)

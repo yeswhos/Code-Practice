@@ -1,0 +1,8 @@
+dict = {
+    'name' : 'Fanhui',
+    'Height': 170.0,
+    'Age': 23
+}
+
+for key in dict:
+    print('%s - %s'% (key, dict[key]))
