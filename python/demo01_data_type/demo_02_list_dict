@@ -1,0 +1,15 @@
+list = [
+    {
+        'name' : 'Fanhui',
+        'Age' : 23,
+        'Skill' : 'Python programmer'
+    },
+    {
+        'name': 'Draven',
+        'Age' : 23,
+        'Skill' : 'Axe'
+    }
+]
+
+for each in list:
+    print(each)
