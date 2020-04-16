@@ -1,6 +1,4 @@
-package test.meng.demoSummary;
-
-import test.meng.demoSummary.red.RedPacketFrame;
+package test.meng.demo19Summary;
 
 public class Demo00 {
     public static void main(String[] args) {

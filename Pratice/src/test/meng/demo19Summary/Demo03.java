@@ -1,6 +1,6 @@
-package test.meng.demoSummary;
+package test.meng.demo19Summary;
 
-import test.meng.demoSummary.red.OpenMode;
+import test.meng.demo19Summary.red.OpenMode;
 
 import java.util.ArrayList;
 import java.util.Random;

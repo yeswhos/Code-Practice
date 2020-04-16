@@ -1,0 +1,7 @@
+str = "Hello World"
+for char in str:
+    print(char)
+
+print(len(str))
+print(str.count('l'))
+print(str.index('l'))

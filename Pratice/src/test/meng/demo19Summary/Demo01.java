@@ -1,6 +1,6 @@
-package test.meng.demoSummary;
+package test.meng.demo19Summary;
 
-import test.meng.demoSummary.red.RedPacketFrame;
+import test.meng.demo19Summary.red.RedPacketFrame;
 
 public class Demo01 extends RedPacketFrame {
     /**

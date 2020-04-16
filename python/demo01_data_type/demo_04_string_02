@@ -1,0 +1,12 @@
+str_1 = 'hello \t world'
+print(str_1)
+print('空格', str_1.isspace())
+print('数字', str_1.isalnum())
+print('字母', str_1.isalpha())
+
+#都不能判断小数
+print('只包含数字，范围小', str_1.isdecimal())
+
+str_2 = '\u00b2'
+print('(1) unicode', str_2.isdigit())
+print('只包含数字，汉字数字', str_1.isnumeric())
