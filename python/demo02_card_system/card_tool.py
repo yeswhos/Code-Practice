@@ -51,6 +51,27 @@ def search_card():
             print("There it is")
             print("name\t\tphone\t\tqq\t\temail")
             print("%s\t\t%s\t\t%s\t\t%s" % (card["name"], card["phone"], card["qq"], card["email"]))
+            deal_card(card)
             break
     else:
         print("not on the list")
+
+def deal_card(find_dict):
+    account_operation = input("please select, 1 modify, 2 delete, 0 back to upper level")
+    if account_operation == "1":
+
+        find_dict["name"] = input_card_info(find_dict["name"], "modify name")
+        find_dict["phone"] = input_card_info(find_dict["phone"], "modify phone")
+        find_dict["qq"] = input_card_info(find_dict["qq"], "modify qq")
+        find_dict["email"] = input_card_info(find_dict["email"], "modify email")
+        print("modify success")
+    elif account_operation == "2":
+        card_list.remove(find_dict)
+        print("delete success")
+
+def input_card_info(value, message):
+    attention_info = input(message)
+    if len(attention_info) > 0:
+        return attention_info
+    else:
+        return value
