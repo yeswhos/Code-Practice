@@ -31,6 +31,10 @@ def show_all():
     """显示所有名片"""
     print("-" * 50)
     print("Show all")
+    if len(card_list) == 0:
+        print("empty card")
+        #return 后面是空的，不会返回任何结果
+        return
     for name in ["name", "phone", "qq", "email"]:
         print(name, end = "\t\t")
     print(" ")
@@ -41,3 +45,12 @@ def search_card():
     """搜索名片"""
     print("-" * 50)
     print("search card")
+    find_name = input("enter searched name: ")
+    for card in card_list:
+        if card["name"] == find_name:
+            print("There it is")
+            print("name\t\tphone\t\tqq\t\temail")
+            print("%s\t\t%s\t\t%s\t\t%s" % (card["name"], card["phone"], card["qq"], card["email"]))
+            break
+    else:
+        print("not on the list")
