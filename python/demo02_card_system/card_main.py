@@ -1,11 +1,14 @@
-account_str = input("Select operation: ")
-print("Your choice is: %s" % account_str)
+while True:
 
-if account_str in [1, 2, 3]:
-    pass
+    account_str = input("Select operation: ")
+    print("Your choice is: %s" % account_str)
 
-elif account_str == 0:
-    pass
+    if account_str in ["1", "2", "3"]:
+        pass
 
-else:
-    print("invalid choice, select again please")
+    elif account_str == "0":
+        print("Thanks for using, see you later")
+        break
+
+    else:
+        print("invalid choice, select again please")
