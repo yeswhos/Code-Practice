@@ -9,11 +9,11 @@ while True:
 
     if account_str in ["1", "2", "3"]:
         if account_str == "1":
-            pass
+            card_tool.new_card()
         elif account_str == "2":
-            pass
+            card_tool.show_all()
         elif account_str == "3":
-            pass
+            card_tool.search_card()
 
     elif account_str == "0":
         print("Thanks for using, see you later")
