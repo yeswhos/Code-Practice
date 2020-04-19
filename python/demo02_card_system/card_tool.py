@@ -57,6 +57,10 @@ def search_card():
         print("not on the list")
 
 def deal_card(find_dict):
+    """
+
+    :param find_dict: 查找值之后的操作
+    """
     account_operation = input("please select, 1 modify, 2 delete, 0 back to upper level")
     if account_operation == "1":
 
@@ -70,6 +74,12 @@ def deal_card(find_dict):
         print("delete success")
 
 def input_card_info(value, message):
+    """
+
+    :param value: 字典原有的值
+    :param message: 更新的值
+    :return: 返回更新的值或者无修改的时候返回原有的值
+    """
     attention_info = input(message)
     if len(attention_info) > 0:
         return attention_info
