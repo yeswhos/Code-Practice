@@ -1,0 +1,14 @@
+def test(num):
+    print("%d 的地址是 %d" % (num, id(num)))
+
+    result = "abc"
+    print("%s 的地址是 %d" % (result, id(result)))
+
+    return result
+
+
+a = 10
+print(id(a))
+
+b = test(a)
+print("%s 的地址是 %d" % (b, id(b)))
