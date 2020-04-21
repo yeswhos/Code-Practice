@@ -1,0 +1,5 @@
+print(hash(1))
+print(hash("hello"))
+print(hash("hello1"))
+
+print(hash(1,))
