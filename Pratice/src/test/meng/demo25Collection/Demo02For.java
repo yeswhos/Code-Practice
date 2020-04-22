@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Demo02For {
     public static void main(String[] args) {
         int [] a = {1, 2, 3, 4};
-        ArrayList<String> b = new ArrayList<>();
+        ArrayList<String> b = new ArrayList<String>();
         b.add("1");
         b.add("2");
         b.add("3");
