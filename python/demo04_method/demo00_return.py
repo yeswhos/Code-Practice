@@ -5,3 +5,8 @@ def measure():
 
 result = measure();
 print(result)
+# print(result[0])
+# print(result[1])
+
+gl_temp, gl_wetness = measure()
+print(gl_temp, gl_wetness)
