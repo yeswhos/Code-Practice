@@ -1,0 +1,15 @@
+def demo(num):
+    num = 99
+    print(num)
+
+gl_num = 100
+demo(gl_num)
+print(gl_num)
+
+def demo_additional(num_list):
+    num_list = [1, 2, 3]
+    print(num_list)
+
+gl_list = [4, 5, 6]
+demo_additional(gl_list)
+print(gl_list)
