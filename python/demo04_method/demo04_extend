@@ -1,0 +1,15 @@
+def demo(num, num_list):
+    num += num
+
+    # num_list += num_list
+    num_list = num_list + num_list
+
+    print(num)
+    #列表+=不是相加再赋值，而是调用extend方法
+    print(num_list)
+
+gl_num = 9
+gl_list = [1, 2, 3]
+demo(9, gl_list)
+print(gl_list)
+
