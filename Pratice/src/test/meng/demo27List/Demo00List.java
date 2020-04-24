@@ -20,5 +20,10 @@ public class Demo00List {
 
         System.out.println(list);
 
+        Demo00Traversal t = new Demo00Traversal();
+        t.traversal00(list);
+        t.traversal01(list);
+        t.traversal02(list);
     }
+
 }
