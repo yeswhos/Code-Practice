@@ -5,8 +5,10 @@ class Cat:
         print("drink")
 
 tom = Cat()
+
 print(tom)
 lazy_tom = Cat()
 print(lazy_tom)
 lazy = lazy_tom
+
 print(lazy)

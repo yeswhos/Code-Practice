@@ -1,0 +1,17 @@
+class Cat:
+    def eat(self):
+        #哪个对象调用的方法，self就是哪个对象的引用
+        print("%s eat" % self.name)
+    def drink(self):
+        print("drink")
+
+tom = Cat()
+tom.name = "Tom"
+tom.eat()
+# print(tom)
+lazy_tom = Cat()
+# print(lazy_tom)
+lazy = lazy_tom
+lazy_tom.name = "懒猫"
+lazy_tom.eat()
+# print(lazy)
