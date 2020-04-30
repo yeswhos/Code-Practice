@@ -15,5 +15,5 @@ class Gun:
         print("left bullet: %s" % self.bullet_count)
 
 ak47 = Gun("ak47")
-ak47.add_bullet(30)
-ak47.shoot()
+# ak47.add_bullet(30)
+# ak47.shoot()
