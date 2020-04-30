@@ -7,7 +7,8 @@ class Soldier:
         self.gun = None
 
     def fire(self):
-        if (self.gun == None):
+        # if (self.gun == None):
+        if self.gun is None:
             print("%s has no gun" % self.name)
         self.gun.add_bullet(30)
         self.gun.shoot()
