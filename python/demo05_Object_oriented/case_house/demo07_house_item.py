@@ -8,6 +8,6 @@ class HouseItem:
 bed = HouseItem("席梦思", 10)
 table = HouseItem("餐桌", 4)
 
-print(bed)
-print(table)
+# print(bed)
+# print(table)
 

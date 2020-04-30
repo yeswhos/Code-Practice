@@ -14,7 +14,13 @@ class House:
 
     def add_item(self, item):
         print("添加 %s" % item)
+        if item.size > self.free_area:
+            print("%s too large to add" % item.name)
+            return
+        self.item_list.append(item.name)
+        self.free_area -= item.size
 
 my_home = House("Flat", 150)
 my_home.add_item(bed)
+
 print(my_home)
