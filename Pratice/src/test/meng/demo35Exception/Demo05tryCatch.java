@@ -16,9 +16,12 @@ public class Demo05tryCatch {
 
     public static void main(String[] args) throws IOException{
         try{
-            readFile("c:\\\\a.txt");
+            readFile("c:\\a.txt");
         }catch (IOException e){
             System.out.println("catch - 后缀不是.txt");
+            System.out.println(e.getMessage());
+            System.out.println(e.toString());
+            e.printStackTrace();
         }
         System.out.println("出了问题，还能继续");
     }
