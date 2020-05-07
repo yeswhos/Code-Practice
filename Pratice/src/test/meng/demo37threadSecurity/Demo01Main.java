@@ -4,7 +4,8 @@ import test.meng.demo36multiThreading.Demo09Security;
 
 public class Demo01Main {
     public static void main(String[] args) {
-        Demo00Synchronized run = new Demo00Synchronized();
+//        Demo00Synchronized run = new Demo00Synchronized();
+        Demo02SynMethod run = new Demo02SynMethod();
         Thread t0 = new Thread(run);
         Thread t1 = new Thread(run);
         Thread t2 = new Thread(run);
