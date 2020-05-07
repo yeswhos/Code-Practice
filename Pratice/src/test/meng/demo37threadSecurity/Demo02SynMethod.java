@@ -5,11 +5,7 @@ public class Demo02SynMethod implements Runnable{
     Object obj = new Object();
     @Override
     public void run() {
-        try{
-            Thread.sleep(10);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
         while(true){
             payTicket();
         }
@@ -23,6 +19,11 @@ public class Demo02SynMethod implements Runnable{
 
     public static synchronized void payTicket(){
         if(ticket > 0){
+            try{
+                Thread.sleep(10);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             System.out.println("线程" + Thread.currentThread().getName() + "--->第" + ticket);
             ticket--;
         }
