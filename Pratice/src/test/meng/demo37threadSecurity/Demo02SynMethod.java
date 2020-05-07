@@ -5,6 +5,11 @@ public class Demo02SynMethod implements Runnable{
     Object obj = new Object();
     @Override
     public void run() {
+        try{
+            Thread.sleep(10);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         while(true){
             payTicket();
         }
