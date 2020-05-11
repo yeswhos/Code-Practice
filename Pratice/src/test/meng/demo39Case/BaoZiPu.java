@@ -28,6 +28,7 @@ public class BaoZiPu extends Thread{
                     baozi.xian = "xian 2";
                     count++;
                 }
+                System.out.println("正在生产...");
                 try{
                     Thread.sleep(2000);
                 }catch (InterruptedException e){
