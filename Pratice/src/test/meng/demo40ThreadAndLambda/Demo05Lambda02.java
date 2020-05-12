@@ -24,6 +24,8 @@ public class Demo05Lambda02 {
         Arrays.sort(arr, (Person o1, Person o2)-> {
             return o2.getAge() - o1.getAge();
         });
+        System.out.println("-------------------");
+        Arrays.sort(arr, (o1, o2)-> o2.getAge() - o1.getAge());
         for(Person p : arr){
             System.out.println(p);
         }

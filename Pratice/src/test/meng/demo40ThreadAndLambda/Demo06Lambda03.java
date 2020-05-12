@@ -16,5 +16,7 @@ public class Demo06Lambda03 {
         System.out.println(invokeCalc((int a, int b)->{
             return a + b;
         }, 120, 130));
+        System.out.println("------------------------");
+        System.out.println(invokeCalc((a, b)-> a + b, 120, 130));
     }
 }

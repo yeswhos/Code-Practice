@@ -12,6 +12,8 @@ public class Demo04Lambda01{
         invokeCook(()->{
             System.out.println("lambda");
         });
+        System.out.println("------------------");
+        invokeCook(()-> System.out.println("lambda"));
     }
 
     public static void invokeCook(Cook cook) {

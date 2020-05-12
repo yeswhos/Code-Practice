@@ -5,5 +5,7 @@ public class Demo03Lambda {
         new Thread(()->{
             System.out.println(Thread.currentThread().getName() + "线程运行");
         }).start();
+        System.out.println("-----------------------");
+        new Thread(()-> System.out.println(Thread.currentThread().getName() + "线程运行")).start();
     }
 }
