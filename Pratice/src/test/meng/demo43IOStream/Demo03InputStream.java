@@ -13,5 +13,6 @@ public class Demo03InputStream{
 //            len = fis.read();
             System.out.println((char)len);
         }
+        fis.close();
     }
 }
