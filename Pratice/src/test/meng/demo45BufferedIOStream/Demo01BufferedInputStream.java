@@ -14,6 +14,8 @@ public class Demo01BufferedInputStream {
 //            System.out.print((char)len);
 //        }
 
+        //---------------------------------------------
+
         byte [] bytes = new byte[1024];
         while((len = bis.read(bytes)) != -1){
             System.out.println(new String(bytes, 0, len));
