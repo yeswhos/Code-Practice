@@ -10,6 +10,7 @@ public class Demo00BufferedOutputStream {
         BufferedOutputStream bof = new BufferedOutputStream(fos);
         bof.write("BufferedOutputStream test".getBytes());
         bof.flush();
+        //不用关fos
         bof.close();
     }
 }
