@@ -3,17 +3,20 @@ package test.meng.demo47Net;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCPClient {
+public class TCPServer {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("127.0.0.1", 8888);
-        OutputStream os = socket.getOutputStream();
-        os.write("Hello World".getBytes());
+        ServerSocket serve = new ServerSocket(8888);
+        Socket socket = serve.accept();
         InputStream is = socket.getInputStream();
         byte [] bytes = new byte[1024];
         int len = is.read(bytes);
         System.out.println(new String(bytes, 0, len));
-        os.close();
+        OutputStream os = socket.getOutputStream();
+        os.write("Roger that".getBytes());
+        socket.close();
+        serve.close();
     }
 }
