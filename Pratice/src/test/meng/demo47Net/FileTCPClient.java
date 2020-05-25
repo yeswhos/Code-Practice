@@ -16,6 +16,7 @@ public class FileTCPClient {
         while((len = fis.read(bytes)) != -1){
             os.write(bytes, 0, len);
         }
+        socket.shutdownOutput();
         InputStream is = socket.getInputStream();
         while ((len = is.read(bytes)) != -1){
             System.out.println(new String(bytes, 0, len));

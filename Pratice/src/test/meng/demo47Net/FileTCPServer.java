@@ -22,6 +22,7 @@ public class FileTCPServer {
         while((len = is.read(bytes)) != -1){
             fos.write(bytes, 0, len);
         }
+        socket.getOutputStream().write("上传成功".getBytes());
         is.close();
         socket.close();
         fos.close();
