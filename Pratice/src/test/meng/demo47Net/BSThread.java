@@ -6,9 +6,8 @@ import java.net.Socket;
 
 public class BSThread {
     public static void main(String[] args) throws IOException {
+        //http://127.0.0.1:8080/D:/GitR/Code-Practice/Pratice/src/test/meng/demo47Net/web/index.html
         ServerSocket server = new ServerSocket(8080);
-
-
         while(true){
             Socket socket = server.accept();
             new Thread(new Runnable() {
