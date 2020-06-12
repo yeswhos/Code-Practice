@@ -36,5 +36,8 @@
     <ClCompile Include="Demo06Struct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo07StructArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
