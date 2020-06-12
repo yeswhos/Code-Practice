@@ -39,7 +39,10 @@
     <ClCompile Include="Demo07StructArray.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Demo08.cpp">
+    <ClCompile Include="Demo09StructWithStruct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo08StructPointer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
