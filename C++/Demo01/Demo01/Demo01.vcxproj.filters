@@ -48,5 +48,8 @@
     <ClCompile Include="Demo10StructAsParameter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo11StructConst.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
