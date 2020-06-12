@@ -51,5 +51,8 @@
     <ClCompile Include="Demo11StructConst.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo12Case.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
