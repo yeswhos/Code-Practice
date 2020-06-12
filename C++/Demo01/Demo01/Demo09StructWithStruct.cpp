@@ -20,5 +20,7 @@ int main() {
 	t.stu.name = "Lulu";
 	t.stu.age = 23;
 	Teacher* p = &t;
-	cout << "Teacher " << t.name << t.age << "\n" << " Student " << p->stu.name << t.stu.age << endl;
+	cout << "Teacher " << t.name << t.age << "\n" << "Student " << p->stu.name << t.stu.age << endl;
+	system("pause");
+	return 0;
 }
