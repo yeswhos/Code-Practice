@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+#define MAX 1000
 void showMenu() {
 	cout << "**********************************" << endl;
 	cout << "1. Add Contact" << endl;
@@ -13,6 +13,18 @@ void showMenu() {
 	cout << "**********************************" << endl;
 }
 
+struct Person {
+	string Name;
+	int Sex;
+	int age;
+	string phoneNumber;
+	string Address;
+};
+
+struct AddressBook {
+	Person p[MAX];
+	int len;
+};
 int main() {
 	int select = 0;
 	while (true) {
