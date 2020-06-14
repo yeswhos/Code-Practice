@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #define MAX 1000
+
 void showMenu() {
 	cout << "**********************************" << endl;
 	cout << "1. Add Contact" << endl;
@@ -26,6 +27,7 @@ struct AddressBook {
 	int len;
 };
 
+//添加联系人
 void addPerson(AddressBook* abs) {
 	if (abs->len == MAX) {
 		cout << "Already full, cannot add" << endl;
@@ -72,6 +74,23 @@ void addPerson(AddressBook* abs) {
 		system("cls");
 	}
 }
+
+void show(AddressBook *abs) {
+	if (abs->len == 0) {
+		cout << "Empty" << endl;
+	}
+	else {
+		for (int i = 0; i < abs->len; i++) {
+			cout << "Name: " << abs->p[i].Name << "\t";
+			cout << "Sex:  " << abs->p[i].Sex << "\t";
+			cout << "Age: " << (abs->p[i].age == 0 ? "男" : "女") << "\t";
+			cout << "Phone Number: " << abs->p[i].phoneNumber << "\t";
+			cout << "Address: " << abs->p[i].Address << endl;
+		}
+	}
+	system("pause");
+	system("cls");
+}
 int main() {
 	int select = 0;
 	AddressBook abs;
@@ -84,6 +103,7 @@ int main() {
 				addPerson(&abs);
 				break;
 			case 2:
+				show(&abs);
 				break;
 			case 3:
 				break;
