@@ -122,6 +122,7 @@ void deleteContact(AddressBook* abs) {
 	system("cls");
 }
 
+//寻找联系人
 void searchContact(AddressBook* abs) {
 	cout << "Please input name for searching " << endl;
 	string name;
@@ -133,6 +134,57 @@ void searchContact(AddressBook* abs) {
 		cout << "Age: " << (abs->p[ret].age) << "\t";
 		cout << "Phone Number: " << abs->p[ret].phoneNumber << "\t";
 		cout << "Address: " << abs->p[ret].Address << endl;
+	}
+	else {
+		cout << "查无此人" << endl;
+	}
+	system("pause");
+	system("cls");
+}
+
+void modifyContact(AddressBook* abs) {
+	cout << "Please input name for modify" << endl;
+	string name;
+	cin >> name;
+	int ret = isExist(abs, name);
+	if (ret != -1) {
+		cout << "Please input name" << endl;
+		cin >> name;
+		abs->p[abs->len].Name = name;
+
+		int sex;
+		cout << "Please input sex" << endl;
+		cout << "0 is female, 1 is male" << endl;
+		cin >> sex;
+		while (true)
+		{
+			if (sex == 1 || sex == 0) {
+				abs->p[abs->len].Sex = sex;
+				break;
+			}
+			else {
+				cout << "Please re-input sex";
+			}
+		}
+
+		int age;
+		cout << "Please input age" << endl;
+		cin >> age;
+		abs->p[abs->len].age = age;
+
+		string number;
+		cout << "Please input number" << endl;
+		cin >> number;
+		abs->p[abs->len].phoneNumber = number;
+
+		string address;
+		cout << "Please input address" << endl;
+		cin >> address;
+		abs->p[abs->len].Address = address;
+		abs->len++;
+		cout << "添加成功" << endl;
+		system("pause");
+		system("cls");
 	}
 	else {
 		cout << "查无此人" << endl;
@@ -161,6 +213,7 @@ int main() {
 				searchContact(&abs);
 				break;
 			case 5:
+				modifyContact(&abs);
 				break;
 			case 6:
 				break;
