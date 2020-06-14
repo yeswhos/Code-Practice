@@ -142,6 +142,7 @@ void searchContact(AddressBook* abs) {
 	system("cls");
 }
 
+//修改联系人信息
 void modifyContact(AddressBook* abs) {
 	cout << "Please input name for modify" << endl;
 	string name;
@@ -192,10 +193,17 @@ void modifyContact(AddressBook* abs) {
 	system("pause");
 	system("cls");
 }
+
+void cleanBook(AddressBook* abs) {
+	abs->len = 0;
+	cout << "清空完成" << endl;
+	system("pause");
+	system("cls");
+}
 int main() {
 	int select = 0;
 	AddressBook abs;
-	abs.len = 0;
+	//abs.len = 0;
 	while (true) {
 		showMenu();
 		cin >> select;
@@ -216,6 +224,7 @@ int main() {
 				modifyContact(&abs);
 				break;
 			case 6:
+				cleanBook(&abs);
 				break;
 			case 0:
 				cout << "See ya" << endl;
