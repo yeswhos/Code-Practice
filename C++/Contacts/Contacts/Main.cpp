@@ -118,6 +118,27 @@ void deleteContact(AddressBook* abs) {
 	else {
 		cout << "查无此人" << endl;
 	}
+	system("pause");
+	system("cls");
+}
+
+void searchContact(AddressBook* abs) {
+	cout << "Please input name for searching " << endl;
+	string name;
+	cin >> name;
+	int ret = isExist(abs, name);
+	if (ret != -1) {
+		cout << "Name: " << abs->p[ret].Name << "\t";
+		cout << "Sex:  " << (abs->p[ret].Sex == 0 ? "男" : "女") << "\t";
+		cout << "Age: " << (abs->p[ret].age) << "\t";
+		cout << "Phone Number: " << abs->p[ret].phoneNumber << "\t";
+		cout << "Address: " << abs->p[ret].Address << endl;
+	}
+	else {
+		cout << "查无此人" << endl;
+	}
+	system("pause");
+	system("cls");
 }
 int main() {
 	int select = 0;
@@ -137,6 +158,7 @@ int main() {
 				deleteContact(&abs);
 				break;
 			case 4:
+				searchContact(&abs);
 				break;
 			case 5:
 				break;
