@@ -75,6 +75,7 @@ void addPerson(AddressBook* abs) {
 	}
 }
 
+//显示联系人
 void show(AddressBook *abs) {
 	if (abs->len == 0) {
 		cout << "Empty" << endl;
@@ -82,14 +83,41 @@ void show(AddressBook *abs) {
 	else {
 		for (int i = 0; i < abs->len; i++) {
 			cout << "Name: " << abs->p[i].Name << "\t";
-			cout << "Sex:  " << abs->p[i].Sex << "\t";
-			cout << "Age: " << (abs->p[i].age == 0 ? "男" : "女") << "\t";
+			cout << "Sex:  " << (abs->p[i].Sex == 0 ? "男" : "女") << "\t";
+			cout << "Age: " << (abs->p[i].age ) << "\t";
 			cout << "Phone Number: " << abs->p[i].phoneNumber << "\t";
 			cout << "Address: " << abs->p[i].Address << endl;
 		}
 	}
 	system("pause");
 	system("cls");
+}
+
+//删除联系人
+int isExist(AddressBook* abs, string name) {
+	for (int i = 0; i < abs->len; i++) {
+		if (abs->p[i].Name == name) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+void deleteContact(AddressBook* abs) {
+	cout << "Please input delete name " << endl;
+	string name;
+	cin >> name;
+	int ret = isExist(abs, name);
+	if (ret != -1) {
+		for (int i = ret; i < abs->len; i++) {
+			abs -> p[i] = abs -> p[i + 1];
+		}
+		abs->len -= 1;
+		cout << "删除成功" << endl;
+	}
+	else {
+		cout << "查无此人" << endl;
+	}
 }
 int main() {
 	int select = 0;
@@ -106,6 +134,7 @@ int main() {
 				show(&abs);
 				break;
 			case 3:
+				deleteContact(&abs);
 				break;
 			case 4:
 				break;
