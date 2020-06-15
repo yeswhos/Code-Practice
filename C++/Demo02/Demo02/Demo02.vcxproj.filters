@@ -21,5 +21,8 @@
     <ClCompile Include="Demo01StackArea.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo02HeapArea.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
