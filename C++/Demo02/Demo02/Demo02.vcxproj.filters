@@ -42,5 +42,8 @@
     <ClCompile Include="Demo08Cite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo09Constant.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
