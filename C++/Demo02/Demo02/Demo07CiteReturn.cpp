@@ -12,13 +12,13 @@ int& show01() {
 }
 
 int main() {
-	int ref = show00();
+	int& ref = show00();
 	cout << ref << endl;
 	cout << ref << endl;
 
-	ref = show01();
-	cout << ref << endl; 
-	cout << ref << endl;
+	int& ref2 = show01();
+	cout << ref2 << endl; 
+	cout << ref2<< endl;
 
 	show01() = 1000;
 	cout << show01() << endl;
