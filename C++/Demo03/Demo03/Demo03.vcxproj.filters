@@ -24,5 +24,8 @@
     <ClCompile Include="Demo02OverWrite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo03Overwrite2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
