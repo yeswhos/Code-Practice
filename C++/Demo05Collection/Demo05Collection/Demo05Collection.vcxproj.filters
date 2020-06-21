@@ -21,5 +21,8 @@
     <ClCompile Include="Demo01Map02.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Demo02Map3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
