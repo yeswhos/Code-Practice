@@ -1,0 +1,5 @@
+import demo05_package
+
+demo05_package.send_message.send("demo")
+txt = demo05_package.receive_message.receive()
+print(txt)
