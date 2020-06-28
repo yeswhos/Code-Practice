@@ -14,6 +14,11 @@ background = pygame.image.load("D:\GitR\Code-Practice\python\Game\images\\backgr
 screen.blit(background, (0, 0))
 #更新屏幕显示
 pygame.display.update()
+
+hero = pygame.image.load("D:\GitR\Code-Practice\python\Game\images\me1.png")
+screen.blit(hero, (200, 500))
+pygame.display.update()
+
 while True:
     pygame.event.get(1000)
     pass
