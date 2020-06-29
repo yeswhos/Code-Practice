@@ -24,10 +24,20 @@ pygame.display.update()
 #创建时钟对象
 clock = pygame.time.Clock()
 
-i = 0
+#rect记录飞机初始位置
+hero_rect = pygame.Rect(150, 300, 102, 126)
+
 
 while True:
+    #代码执行的频率
     clock.tick(60)
+    #修改飞机位置
+    hero_rect.y -= 1
+    #调用blit方法绘制图像
+    screen.blit(background, (0, 0))
+    screen.blit(hero, hero_rect)
+    pygame.display.update()
+
     pygame.event.get(1000)
     pass
 
