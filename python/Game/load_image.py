@@ -21,7 +21,13 @@ screen.blit(hero, (200, 500))
 #可最后同意调用update方法
 pygame.display.update()
 
+#创建时钟对象
+clock = pygame.time.Clock()
+
+i = 0
+
 while True:
+    clock.tick(60)
     pygame.event.get(1000)
     pass
 
