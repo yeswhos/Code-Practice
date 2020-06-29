@@ -33,7 +33,7 @@ while True:
     clock.tick(60)
     #修改飞机位置
     hero_rect.y -= 1
-    if(hero_rect.y <= 0):
+    if(hero_rect.y <= -126):
         hero_rect.y = 700
     #调用blit方法绘制图像
     screen.blit(background, (0, 0))
