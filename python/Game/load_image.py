@@ -31,6 +31,12 @@ hero_rect = pygame.Rect(150, 300, 102, 126)
 while True:
     #代码执行的频率
     clock.tick(60)
+
+    #捕获事件
+    event_list = pygame.event.get()
+    if (len(event_list) > 0):
+        print(event_list)
+
     #修改飞机位置
     hero_rect.y -= 1
     if(hero_rect.y <= -126):
