@@ -1,5 +1,6 @@
 import pygame
 
+#封装图像，位置和速度，提供update方法，根据需求更新位置rect
 class GameSprite(pygame.sprite.Sprite):
     def __init__(self, image_name, speed = 1):
         #不是继承object的类，都需要调用父类的初始化方法
