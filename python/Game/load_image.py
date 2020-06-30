@@ -1,4 +1,5 @@
 import pygame
+from plane_sprites import *
 
 pygame.init()
 #set_mode(resolution = (0, 0), flags = 0, depth = 0)
@@ -27,6 +28,10 @@ clock = pygame.time.Clock()
 #rect记录飞机初始位置
 hero_rect = pygame.Rect(150, 300, 102, 126)
 
+#创建敌机和敌机组
+enemy = GameSprite("D:\GitR\Code-Practice\python\Game\images\enemy1.png")
+enemy1 = GameSprite("D:\GitR\Code-Practice\python\Game\images\enemy1.png", 2)
+enemy_group = pygame.sprite.Group(enemy, enemy1)
 
 while True:
     #代码执行的频率
@@ -46,9 +51,13 @@ while True:
     #调用blit方法绘制图像
     screen.blit(background, (0, 0))
     screen.blit(hero, hero_rect)
+
+    #Update敌机和屏幕，让所有精灵更新位置
+    enemy_group.update()
+    #在screen绘制所有的精灵
+    enemy_group.draw(screen)
     pygame.display.update()
 
-    pygame.event.get(1000)
-    pass
+    #pygame.event.get(1000)
 
 pygame.quit()
