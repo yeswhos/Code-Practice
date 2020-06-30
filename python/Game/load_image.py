@@ -33,9 +33,11 @@ while True:
     clock.tick(60)
 
     #捕获事件
-    event_list = pygame.event.get()
-    if (len(event_list) > 0):
-        print(event_list)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            print("tuichuyouxi")
+            pygame.quit()
+            exit()
 
     #修改飞机位置
     hero_rect.y -= 1
