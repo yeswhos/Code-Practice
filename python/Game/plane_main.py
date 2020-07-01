@@ -7,7 +7,7 @@ class PlaneGame(object):
         print("游戏初始化")
 
         #创建游戏窗口
-        self.screen = pygame.display.set_mode((480, 700))
+        self.screen = pygame.display.set_mode(SCREEN_RECT.size())
         #创建时钟
         self.clock = pygame.time.Clock()
         #调用私有方法，精灵的创建
