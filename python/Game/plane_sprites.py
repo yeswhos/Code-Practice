@@ -1,5 +1,8 @@
 import pygame
 
+#屏幕大小常量
+SCREEN_RECT = pygame.Rect(0, 0, 480, 700)
+
 #封装图像，位置和速度，提供update方法，根据需求更新位置rect
 class GameSprite(pygame.sprite.Sprite):
     def __init__(self, image_name, speed = 1):
