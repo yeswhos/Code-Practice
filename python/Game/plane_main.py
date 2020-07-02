@@ -14,7 +14,11 @@ class PlaneGame(object):
         self.__create_sprites()
 
     def __create_sprites(self):
-        pass
+        #创建背景精灵和精灵组
+        bg1 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
+        bg2 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
+        bg2.rect.y = -bg2.rect.height
+        self.back_group = pygame.sprite.Group(bg1, bg2)
 
     def start_game(self):
         print("游戏开始")
@@ -38,7 +42,9 @@ class PlaneGame(object):
     def __check_collide(self):
         pass
     def __update_sprites(self):
-        pass
+        self.back_group.update()
+        self.back_group.draw(self.screen)
+
     @staticmethod
     def __game_over():
         print("游戏结束")
