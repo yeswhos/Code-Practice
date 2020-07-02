@@ -15,9 +15,13 @@ class PlaneGame(object):
 
     def __create_sprites(self):
         #创建背景精灵和精灵组
-        bg1 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
-        bg2 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
-        bg2.rect.y = -bg2.rect.height
+        # bg1 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
+        # bg2 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
+        #bg2.rect.y = -bg2.rect.height
+
+        #初始化background之后的方法
+        bg1 = Background()
+        bg2 = Background(True)
         self.back_group = pygame.sprite.Group(bg1, bg2)
 
     def start_game(self):

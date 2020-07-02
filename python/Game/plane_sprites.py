@@ -22,6 +22,11 @@ class GameSprite(pygame.sprite.Sprite):
 #派生一个新的子类
 #在子类针对特有的需求，重写父类方法，并进行扩展
 class Background(GameSprite):
+    def __init__(self, is_alt = False):
+        super().__init__("D:\GitR\Code-Practice\python\Game\images\\background.png")
+        if is_alt:
+            self.rect.y = -self.rect.height
+
     def update(self):
         #继承父类方法实现
         super().update()
