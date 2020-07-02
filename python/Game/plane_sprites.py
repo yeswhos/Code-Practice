@@ -17,3 +17,15 @@ class GameSprite(pygame.sprite.Sprite):
     def update(self):
         #垂直方向移动
         self.rect.y += self.speed
+
+#继承父类的方法，不能满足子类需求
+#派生一个新的子类
+#在子类针对特有的需求，重写父类方法，并进行扩展
+class Background(GameSprite):
+    def update(self):
+        #继承父类方法实现
+        super().update()
+        #判断是否移出屏幕，如果移出屏幕，将图像设置为屏幕的上方
+        if self.rect.y >= SCREEN_RECT.height:
+            self.rect.y = -self.rect.height
+
