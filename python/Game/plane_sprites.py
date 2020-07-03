@@ -53,5 +53,9 @@ class Enemy(GameSprite):
         super().update()
         #判断是否飞出屏幕，如果是，需要从精灵组删除飞机
         if self.rect.y >= SCREEN_RECT.height:
+            #将精灵从精灵组移除并自动销毁，避免内存消耗
+            self.kill()
             print("删除该精灵")
+    def __del__(self):
+        pass
 

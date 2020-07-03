@@ -54,7 +54,7 @@ class PlaneGame(object):
                 #创建敌机精灵
                 enemy = Enemy()
                 self.enemy_group.add(enemy)
-                print("敌机出场")
+                # print("敌机出场")
 
     def __check_collide(self):
         pass
