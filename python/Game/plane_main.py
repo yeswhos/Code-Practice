@@ -13,6 +13,10 @@ class PlaneGame(object):
         #调用私有方法，精灵的创建
         self.__create_sprites()
 
+        #设置定时器事件, 创建敌机
+        pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)
+
+
     def __create_sprites(self):
         #创建背景精灵和精灵组
         # bg1 = Background("D:\GitR\Code-Practice\python\Game\images\\background.png")
@@ -38,10 +42,13 @@ class PlaneGame(object):
             #更新显示
             pygame.display.update()
             pass
+
     def __event_handler(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 PlaneGame.__game_over()
+            elif (event.type == CREATE_ENEMY_EVENT):
+                print("敌机出场")
 
     def __check_collide(self):
         pass

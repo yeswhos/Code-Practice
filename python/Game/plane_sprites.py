@@ -3,6 +3,7 @@ import pygame
 #屏幕大小常量
 SCREEN_RECT = pygame.Rect(0, 0, 480, 700)
 FRAME_PER_SECOND = 60
+CREATE_ENEMY_EVENT = pygame.USEREVENT
 
 #封装图像，位置和速度，提供update方法，根据需求更新位置rect
 class GameSprite(pygame.sprite.Sprite):
@@ -33,4 +34,15 @@ class Background(GameSprite):
         #判断是否移出屏幕，如果移出屏幕，将图像设置为屏幕的上方
         if self.rect.y >= SCREEN_RECT.height:
             self.rect.y = -self.rect.height
+
+class Enemy(GameSprite):
+    def __init__(self):
+        #调用父类方法创建敌机精灵，同时指定敌机图片
+        #指定敌机的初始随即速度
+        #指定敌机的初始随机位置
+        pass
+    def update(self):
+        #调用父类方法，保持垂直方向飞行
+        #判断是否飞出屏幕，如果是，需要从精灵组删除飞机
+
 
