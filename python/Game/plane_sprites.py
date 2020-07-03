@@ -44,5 +44,5 @@ class Enemy(GameSprite):
     def update(self):
         #调用父类方法，保持垂直方向飞行
         #判断是否飞出屏幕，如果是，需要从精灵组删除飞机
-
+        pass
 
