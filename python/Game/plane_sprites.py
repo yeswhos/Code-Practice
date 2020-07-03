@@ -1,3 +1,5 @@
+import random
+
 import pygame
 
 #屏幕大小常量
@@ -40,13 +42,14 @@ class Enemy(GameSprite):
         #调用父类方法创建敌机精灵，同时指定敌机图片
         super().__init__("D:\GitR\Code-Practice\python\Game\images\enemy1.png")
         #指定敌机的初始随即速度
+        self.speed = random.randint(1, 3)
         #指定敌机的初始随机位置
-        pass
+        #更平缓出现，y方向的设置
+        self.rect.bottom = 0
     def update(self):
         #调用父类方法，保持垂直方向飞行
         super().update()
         #判断是否飞出屏幕，如果是，需要从精灵组删除飞机
         if self.rect.y >= SCREEN_RECT.height:
             print("删除该精灵")
-        pass
 
