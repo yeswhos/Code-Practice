@@ -46,6 +46,8 @@ class Enemy(GameSprite):
         #指定敌机的初始随机位置
         #更平缓出现，y方向的设置
         self.rect.bottom = 0
+        max_x = SCREEN_RECT.width - self.rect.width
+        self.rect.x = random.randint(0, max_x)
     def update(self):
         #调用父类方法，保持垂直方向飞行
         super().update()
