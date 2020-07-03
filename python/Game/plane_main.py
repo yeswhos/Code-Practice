@@ -28,6 +28,9 @@ class PlaneGame(object):
         bg2 = Background(True)
         self.back_group = pygame.sprite.Group(bg1, bg2)
 
+        #创建精灵组
+        self.enemy_group = pygame.sprite.Group()
+
     def start_game(self):
         print("游戏开始")
         while True:
@@ -48,6 +51,9 @@ class PlaneGame(object):
             if event.type == pygame.QUIT:
                 PlaneGame.__game_over()
             elif (event.type == CREATE_ENEMY_EVENT):
+                #创建敌机精灵
+                enemy = Enemy()
+                self.enemy_group.add(enemy)
                 print("敌机出场")
 
     def __check_collide(self):
@@ -55,6 +61,9 @@ class PlaneGame(object):
     def __update_sprites(self):
         self.back_group.update()
         self.back_group.draw(self.screen)
+
+        self.enemy_group.update()
+        self.enemy_group.draw(self.screen)
 
     @staticmethod
     def __game_over():
