@@ -59,6 +59,8 @@ class PlaneGame(object):
                 enemy = Enemy()
                 self.enemy_group.add(enemy)
                 # print("敌机出场")
+            elif(event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
+                print("向右")
 
     def __check_collide(self):
         pass
