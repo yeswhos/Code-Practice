@@ -59,8 +59,13 @@ class PlaneGame(object):
                 enemy = Enemy()
                 self.enemy_group.add(enemy)
                 # print("敌机出场")
-            elif(event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
-                print("向右")
+            #一种按键操作
+            # elif(event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):
+            #     print("向右")
+        #第二种按键操作，通过键盘常量，按键的元组，按下就一直有，上面的是按下抬起是一次。
+        keys_pressed = pygame.key.get_pressed()
+        if keys_pressed[pygame.K_RIGHT]:
+            print("向右")
 
     def __check_collide(self):
         pass
