@@ -31,6 +31,10 @@ class PlaneGame(object):
         #创建精灵组
         self.enemy_group = pygame.sprite.Group()
 
+        #创建英雄
+        self.hero = Hero()
+        self.hero_group = pygame.sprite.Group(self.hero)
+
     def start_game(self):
         print("游戏开始")
         while True:
@@ -64,6 +68,9 @@ class PlaneGame(object):
 
         self.enemy_group.update()
         self.enemy_group.draw(self.screen)
+
+        self.hero_group.update()
+        self.hero_group.draw(self.screen)
 
     @staticmethod
     def __game_over():

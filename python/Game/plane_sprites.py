@@ -62,6 +62,6 @@ class Enemy(GameSprite):
 class Hero(GameSprite):
     def __init__(self):
         #调用父类方法，设置image & speed
-        super.__init__("D:\GitR\Code-Practice\python\Game\images\mei.png", 0)
+        super().__init__("D:\GitR\Code-Practice\python\Game\images\me1.png", 0)
         self.rect.centerx = SCREEN_RECT.centerx
         self.rect.bottom = SCREEN_RECT.bottom - 120
