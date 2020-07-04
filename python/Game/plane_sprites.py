@@ -65,3 +65,6 @@ class Hero(GameSprite):
         super().__init__("D:\GitR\Code-Practice\python\Game\images\me1.png", 0)
         self.rect.centerx = SCREEN_RECT.centerx
         self.rect.bottom = SCREEN_RECT.bottom - 120
+
+    def update(self):
+        self.rect.x += self.speed
