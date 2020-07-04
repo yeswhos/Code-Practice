@@ -68,3 +68,8 @@ class Hero(GameSprite):
 
     def update(self):
         self.rect.x += self.speed
+        #控制英雄不离开屏幕
+        if self.rect.x < 0:
+            self.rect.x = 0
+        elif self.rect.right > SCREEN_RECT.right:
+            self.rect.right = SCREEN_RECT.right
