@@ -15,7 +15,8 @@ class PlaneGame(object):
 
         #设置定时器事件, 创建敌机
         pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)
-
+        #发射子弹
+        pygame.time.set_timer(HERO_FIRE_EVENT, 500)
 
     def __create_sprites(self):
         #创建背景精灵和精灵组
@@ -58,6 +59,8 @@ class PlaneGame(object):
                 #创建敌机精灵
                 enemy = Enemy()
                 self.enemy_group.add(enemy)
+            elif(event.type == HERO_FIRE_EVENT):
+                self.hero.fire()
                 # print("敌机出场")
             #一种按键操作
             # elif(event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT):

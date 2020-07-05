@@ -4,8 +4,12 @@ import pygame
 
 #屏幕大小常量
 SCREEN_RECT = pygame.Rect(0, 0, 480, 700)
+#刷新频率
 FRAME_PER_SECOND = 60
+#敌机定时器常量
 CREATE_ENEMY_EVENT = pygame.USEREVENT
+#子弹发射事件
+HERO_FIRE_EVENT = pygame.USEREVENT + 1
 
 #封装图像，位置和速度，提供update方法，根据需求更新位置rect
 class GameSprite(pygame.sprite.Sprite):
@@ -73,3 +77,6 @@ class Hero(GameSprite):
             self.rect.x = 0
         elif self.rect.right > SCREEN_RECT.right:
             self.rect.right = SCREEN_RECT.right
+
+    def fire(self):
+        print("发射子弹")
