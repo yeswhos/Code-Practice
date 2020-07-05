@@ -67,8 +67,11 @@ class Hero(GameSprite):
     def __init__(self):
         #调用父类方法，设置image & speed
         super().__init__("D:\GitR\Code-Practice\python\Game\images\me1.png", 0)
+        #英雄初始位置
         self.rect.centerx = SCREEN_RECT.centerx
         self.rect.bottom = SCREEN_RECT.bottom - 120
+        #创建子弹精灵组
+        self.bullets = pygame.sprite.Group()
 
     def update(self):
         self.rect.x += self.speed
@@ -79,7 +82,14 @@ class Hero(GameSprite):
             self.rect.right = SCREEN_RECT.right
 
     def fire(self):
-        print("发射子弹")
+        # print("发射子弹")
+        #创建子弹精灵
+        bullet = Bullet()
+        #设置精灵的位置
+        bullet.rect.bottom = self.rect.y - 20
+        bullet.rect.centerx = self.rect.centerx
+        #添加到精灵组中
+        self.bullets.add(bullet)
 
 class Bullet(GameSprite):
     def __init__(self):
