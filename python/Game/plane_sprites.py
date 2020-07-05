@@ -80,3 +80,16 @@ class Hero(GameSprite):
 
     def fire(self):
         print("发射子弹")
+
+class Bullet(GameSprite):
+    def __init__(self):
+        #调用父类方法，设置子弹图片，设置初始速度
+        super().__init__("D:\GitR\Code-Practice\python\Game\images\\bullet1.png", -2)
+
+    def update(self):
+        #调用父类方法，让子弹沿垂直方向飞行
+        super().update()
+        if self.rect.bottom < 0:
+            self.kill()
+    def __del__(self):
+        pass
