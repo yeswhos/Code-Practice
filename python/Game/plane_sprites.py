@@ -83,13 +83,14 @@ class Hero(GameSprite):
 
     def fire(self):
         # print("发射子弹")
-        #创建子弹精灵
-        bullet = Bullet()
-        #设置精灵的位置
-        bullet.rect.bottom = self.rect.y - 20
-        bullet.rect.centerx = self.rect.centerx
-        #添加到精灵组中
-        self.bullets.add(bullet)
+        for i in (0, 1, 2):
+            #创建子弹精灵
+            bullet = Bullet()
+            #设置精灵的位置
+            bullet.rect.bottom = self.rect.y - i * 20
+            bullet.rect.centerx = self.rect.centerx
+            #添加到精灵组中
+            self.bullets.add(bullet)
 
 class Bullet(GameSprite):
     def __init__(self):
