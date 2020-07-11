@@ -4,7 +4,7 @@ def combination(num):
     for a in range(0, num + 1):
         for b in range(0, num + 1):
             for c in range(0, num + 1):
-                if (math.pow(a, 2) + math.pow(b, 2) + math.pow(c, 2) == num):
+                if (math.pow(a, 2) + math.pow(b, 2) == math.pow(c, 2) and (a + b + c == num)):
                     print(a, "\t", b,  "\t", c)
 
 combination(1000)
