@@ -75,9 +75,10 @@ class SingleLinkList(object):
             if(cur.elem == item):
                 if (cur == self.__head):
                     self.__head = cur.next
+                    break
                 else:
                     pre.next = cur.next
-                    return
+                    break
                 #pre.next = pre.next.next
             pre = cur
             cur = cur.next
