@@ -69,10 +69,28 @@ class SingleLinkList(object):
             pre.next = node
 
     def remove(self, item):
-        pass
+        cur = self.__head
+        pre = None
+        while cur!= None:
+            if(cur.elem == item):
+                if (cur == self.__head):
+                    self.__head = cur.next
+                else:
+                    pre.next = cur.next
+                    return
+                #pre.next = pre.next.next
+            pre = cur
+            cur = cur.next
+
 
     def search(self, item):
-        pass
+        cur = self.__head
+        while cur != None:
+            if(cur.elem == item):
+                return True
+            else:
+                cur = cur.next
+        return False
 
 node = Node(100)
 single_obj = SingleLinkList()
@@ -85,4 +103,7 @@ if __name__ == "__main__":
     print(linked.length())
     linked.travel()
     linked.insert(1, 30)
+    linked.travel()
+    # print(linked.search(40))
+    linked.remove(20)
     linked.travel()
