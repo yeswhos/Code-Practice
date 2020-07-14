@@ -5,18 +5,19 @@ class Node(object):
 
 class SingleLinkList(object):
     def __init__(self, node = None):
-        self._head = None
+        self._head = node
 
     def is_empty(self):
-        cur = self._head
-        if cur:
-            return True
-        else:
-            return False
+        # cur = self._head
+        # if cur:
+        #     return True
+        # else:
+        #     return False
+        return self._head == None
 
     def length(self):
         cur = self._head
-        count = 1
+        count = 0
         while cur != None:
             count += 1
             cur = cur.next
@@ -52,4 +53,13 @@ class SingleLinkList(object):
 
 node = Node(100)
 single_obj = SingleLinkList()
-#差个测试
+
+if __name__ == "__main__":
+    linked = SingleLinkList()
+    print(linked.is_empty())
+    print(linked.length())
+    linked.append(10)
+    linked.append(20)
+    print(linked.is_empty())
+    print(linked.length())
+    linked.travel()
