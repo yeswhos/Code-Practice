@@ -5,7 +5,7 @@ class Node(object):
 
 class SingleLinkList(object):
     def __init__(self, node = None):
-        self._head = node
+        self.__head = node
 
     def is_empty(self):
         # cur = self._head
@@ -13,10 +13,10 @@ class SingleLinkList(object):
         #     return True
         # else:
         #     return False
-        return self._head == None
+        return self.__head == None
 
     def length(self):
-        cur = self._head
+        cur = self.__head
         count = 0
         while cur != None:
             count += 1
@@ -24,9 +24,9 @@ class SingleLinkList(object):
         return count
 
     def travel(self):
-        cur = self._head
+        cur = self.__head
         while cur != None:
-            print(cur.elem)
+            print(cur.elem, end = " ")
             cur = cur.next
 
     def add(self, item):
@@ -35,9 +35,9 @@ class SingleLinkList(object):
     def append(self, item):
         node = Node(item)
         if self.is_empty():
-            self._head = node
+            self.__head = node
         else:
-            cur = self._head
+            cur = self.__head
             while cur.next != None:
                 cur = cur.next
             cur.next = node
