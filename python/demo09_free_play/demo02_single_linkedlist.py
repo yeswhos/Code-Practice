@@ -30,9 +30,14 @@ class SingleLinkList(object):
             cur = cur.next
 
     def add(self, item):
-        pass
+        #头插法
+        node = Node(item)
+        node.next = self.__head
+        self.__head = node
 
     def append(self, item):
+        #尾插法
+        #创建节点
         node = Node(item)
         if self.is_empty():
             self.__head = node
@@ -59,7 +64,7 @@ if __name__ == "__main__":
     print(linked.is_empty())
     print(linked.length())
     linked.append(10)
-    linked.append(20)
+    linked.add(20)
     print(linked.is_empty())
     print(linked.length())
     linked.travel()
