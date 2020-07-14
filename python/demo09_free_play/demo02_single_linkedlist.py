@@ -28,6 +28,7 @@ class SingleLinkList(object):
         while cur != None:
             print(cur.elem, end = " ")
             cur = cur.next
+        print(end = '\n')
 
     def add(self, item):
         #头插法
@@ -48,7 +49,24 @@ class SingleLinkList(object):
             cur.next = node
 
     def insert(self, pos, item):
-        pass
+        """
+        :param pos: 从0开始
+        :param item: 插入的元素
+        :return: 并不return，插进去就好了
+        """
+        if pos <= 0:
+            self.add(item)
+        elif(pos > (self.length() - 1)):
+            self.append(item)
+        else:
+            node = Node(item)
+            pre = self.__head
+            count = 0
+            while count < (pos - 1):
+                pre = pre.next
+                count += 1
+            node.next = pre.next
+            pre.next = node
 
     def remove(self, item):
         pass
@@ -61,10 +79,10 @@ single_obj = SingleLinkList()
 
 if __name__ == "__main__":
     linked = SingleLinkList()
-    print(linked.is_empty())
-    print(linked.length())
     linked.append(10)
     linked.add(20)
     print(linked.is_empty())
     print(linked.length())
+    linked.travel()
+    linked.insert(1, 30)
     linked.travel()
