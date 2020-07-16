@@ -37,6 +37,8 @@ class SingleLinkList(object):
         node.next = self.__head
         self.__head = node
         node.next.prev = node
+        #self.__head.prev = node
+        #self.__head = node
 
     def append(self, item):
         #尾插法
@@ -49,6 +51,7 @@ class SingleLinkList(object):
             while cur.next != None:
                 cur = cur.next
             cur.next = node
+            node.prev = cur
 
     def insert(self, pos, item):
         """
