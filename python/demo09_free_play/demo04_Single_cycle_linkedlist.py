@@ -30,16 +30,21 @@ class SingleLinkList(object):
             print(cur.elem, end = " ")
             cur = cur.next
         print(cur.elem)
-        print(end = '\n')
+        #print(end = '\n')
 
     def add(self, item):
         #头插法
         node = Node(item)
+        if self.is_empty():
+            self.__head = node
+            node.next = node
+        cur = self.__head
+        while cur.next != self.__head:
+            cur = cur.next
+
         node.next = self.__head
         self.__head = node
-        node.next.prev = node
-        #self.__head.prev = node
-        #self.__head = node
+        cur.next = self.__head
 
     def append(self, item):
         #尾插法
@@ -47,12 +52,14 @@ class SingleLinkList(object):
         node = Node(item)
         if self.is_empty():
             self.__head = node
+            node.next = node
         else:
             cur = self.__head
-            while cur.next != None:
+            while cur.next != self.__head:
                 cur = cur.next
+            node.next = cur.next
+            #或者 node.next = self.__head
             cur.next = node
-            node.prev = cur
 
     def insert(self, pos, item):
         """
