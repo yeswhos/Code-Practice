@@ -65,13 +65,15 @@ class SingleLinkList(object):
             self.append(item)
         else:
             node = Node(item)
-            pre = self.__head
+            cur = self.__head
             count = 0
-            while count < (pos - 1):
-                pre = pre.next
+            while count < pos:
+                cur = cur.next
                 count += 1
-            node.next = pre.next
-            pre.next = node
+            node.next = cur
+            node.prev = cur.prev
+            cur.prev.next = node
+            cur.prev = node
 
     def remove(self, item):
         cur = self.__head
