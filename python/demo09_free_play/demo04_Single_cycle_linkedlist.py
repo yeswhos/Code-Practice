@@ -13,18 +13,23 @@ class SingleLinkList(object):
         return self.__head == None
 
     def length(self):
+        if self.is_empty():
+            return 0
         cur = self.__head
-        count = 0
-        while cur != None:
+        count = 1
+        while cur != self.__head:
             count += 1
             cur = cur.next
         return count
 
     def travel(self):
+        if self.is_empty():
+            return
         cur = self.__head
-        while cur != None:
+        while cur.next != self.__head:
             print(cur.elem, end = " ")
             cur = cur.next
+        print(cur.elem)
         print(end = '\n')
 
     def add(self, item):
