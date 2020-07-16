@@ -105,12 +105,17 @@ class SingleLinkList(object):
 
 
     def search(self, item):
+        if self.is_empty():
+            return False
         cur = self.__head
-        while cur != None:
+        while cur.next != self.__head:
             if(cur.elem == item):
                 return True
             else:
                 cur = cur.next
+        #因为最后一个节点不会到循环里，所以单独拿出来弄
+        if cur.elem == item:
+            return True
         return False
 
 node = Node(100)
