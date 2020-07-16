@@ -77,18 +77,23 @@ class SingleLinkList(object):
 
     def remove(self, item):
         cur = self.__head
-        pre = None
+
         while cur!= None:
             if(cur.elem == item):
+                #找到后判断是否为头节点
                 if (cur == self.__head):
                     self.__head = cur.next
-                    break
+                    #特殊情况，判断是否只有一个节点
+                    if cur.next:
+                        cur.next.prev = None
                 else:
-                    pre.next = cur.next
-                    break
-                #pre.next = pre.next.next
-            pre = cur
-            cur = cur.next
+                    cur.prev.next = cur.next
+                    #特殊情况，判断是最后一个节点
+                    if cur.next:
+                        cur.next.prev = cur.prev
+                break
+            else:
+                cur = cur.next
 
 
     def search(self, item):
