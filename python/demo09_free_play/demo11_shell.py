@@ -4,10 +4,10 @@ def shell(list):
     while (gap > 0):
         for i in range (gap, n):
             j = i
-            while (i > 0):
-                if (list[j] > list[j - gap]):
+            while (j > 0):
+                if (list[j] < list[j - gap]):
                     list[j], list[j - gap] = list[j - gap], list[j]
-                    j += 1
+                    j -= gap
                 else:
                     break
             i += 1
