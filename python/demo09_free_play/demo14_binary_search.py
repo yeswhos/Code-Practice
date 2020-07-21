@@ -1,4 +1,5 @@
 def binary_search(list, item):
+    #递归
     n = len(list)
     mid = n // 2
     if (n > 0):
