@@ -39,10 +39,41 @@ class Tree(object):
             if cur_node.rchild is not None:
                 queue.append(cur_node.rchild)
 
+    def preOrder(self, node):
+        if node is None:
+            return
+        print(node.elem, end = " ")
+        self.preOrder(node.lchild)
+        self.preOrder(node.rchild)
+
+    def inOrder(self, node):
+        if node is None:
+            return
+        self.inOrder(node.lchild)
+        print(node.elem, end = " ")
+        self.inOrder(node.rchild)
+
+    def postOrder(self, node):
+        if node is None:
+            return
+        self.postOrder(node.lchild)
+        self.postOrder(node.rchild)
+        print(node.elem, end = " ")
+
 if __name__ == "__main__":
     tree = Tree()
     tree.add(0)
     tree.add(1)
     tree.add(2)
     tree.add(3)
+    tree.add(4)
+    tree.add(5)
+    tree.add(6)
+    tree.add(7)
+    tree.add(8)
     tree.breadth_travel()
+    tree.preOrder(tree.root)
+    print("--------")
+    tree.inOrder(tree.root)
+    print("--------")
+    tree.postOrder(tree.root)
