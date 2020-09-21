@@ -7,3 +7,9 @@ def feb(n):
         return feb(n - 1) + feb(n - 2)
 
 print(feb(6))
+
+list = list()
+for i in range(1, 7):
+    list.append(feb(i))
+    print(list)
+
