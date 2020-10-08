@@ -349,7 +349,7 @@ print ','.join(items)
 ```python
 lst = input().split(',')
 lst.sort()
-print(",".join(lst))
+print(",".join(lst))t
 ```
 ---
 ```python
