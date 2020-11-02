@@ -41,18 +41,60 @@ keys是键值， value是内容，items是两个都有
 # res2 = zip(li)
 # print(res)
 
-a = (1, 2, 3, 4)
-b = ("a", "b", "c", "d")
-a0 = dict(zip(a, b))
-a1 = list((range(10)))
-a2 = [i for i in a1 if i in a0]
-a3 = [a0[s] for s in a0]
-a4 = [i for i in a1 if i in a3]
-a5 = {i: i * i for i in a1}
-a6 = [[i, i * i] for i in a1]
-print(a0)
-print(a2)
-print(a3)
-print(a4)
-print(a5)
-print(a6)
+# a = (1, 2, 3, 4)
+# b = ("a", "b", "c", "d")
+# a0 = dict(zip(a, b))
+# a1 = list((range(10)))
+# a2 = [i for i in a1 if i in a0]
+# a3 = [a0[s] for s in a0]
+# a4 = [i for i in a1 if i in a3]
+# a5 = {i: i * i for i in a1}
+# a6 = [[i, i * i] for i in a1]
+# print(a0)
+# print(a2)
+# print(a3)
+# print(a4)
+# print(a5)
+# print(a6)
+
+################################
+# foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4]
+# res = sorted(foo, key = lambda x: (x < 0, abs(x)))
+# print(res)
+#################################
+
+# foo = [{"name":"zs","age":19},{"name":"ll","age":54}]
+# res = sorted(foo, key = lambda x: x["name"])
+# res_2 = sorted(foo, key = lambda x: (x[""]))
+
+# li = {"name": "mfh", "age" : "23", "city" : "chengdu"}
+# a = zip(li.keys(), li.values())
+# b = [i for i in a]
+# c = sorted(b, key = lambda x : x[0])
+# #print(c)
+# new_dic = {x[0] : x[1] for x in c}
+# print(new_dic)
+
+import re
+# s = "info:xiaoZhang 33 shandong"
+# res = re.split(r":| ", s)
+# print(res)
+
+# email_list = ["abcghll@163.com", "sdagfr23@163.com", ".com.oefsdj@163"]
+# for email in email_list:
+#     ret = re.match("[\w]{4, 20}@163\.com$", email)
+#     if ret:
+#         print("babababa" + ret.group())
+#     else:
+#         print("lalalala " + email)
+
+def sum_num(a):
+    if a >= 1:
+        b = a + sum_num(a - 1)
+    else:
+        b = 0
+    return b
+
+print(sum_num(10))
+
+
