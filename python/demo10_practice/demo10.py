@@ -88,13 +88,52 @@ import re
 #     else:
 #         print("lalalala " + email)
 
-def sum_num(a):
-    if a >= 1:
-        b = a + sum_num(a - 1)
-    else:
-        b = 0
-    return b
+# def sum_num(a):
+#     if a >= 1:
+#         b = a + sum_num(a - 1)
+#     else:
+#         b = 0
+#     return b
+#
+# print(sum_num(10))
 
-print(sum_num(10))
+# import re
+# s = "年龄23，工资00000"
+# res = re.search(r"\d+", s)
+# print(res.group())
+# res_2 = re.findall("工资", s)
+# res_3 = re.findall(r"\d+", s)
+# res_4 = re.match("年龄", s)
+# print(res_4.group())
 
+# print("{} is {} years old".format("mfh", 23))
+# print("%s is %d years old"%("mfh", 23))
+
+# t1 = (("a"), ("b"))
+# t2 = (("c"), ("d"))
+# res = lambda t1, t2: ([i, j] for i, j in zip(t1, t2))
+# print(dict(res(t1, t2)))
+
+# def fn(c):
+#     for i in range(c):
+#         yield i ** 2
+# print(fn(5))
+
+# dic = {"a": 1, "b": 2, "c": 3}
+# print(sorted(dic.items(), key = lambda x: x[1], reverse=True))
+
+# def fn():
+#     return [lambda x: (i ** x for i in range(4))]
+# # print(fn())
+# print([m(2) for m in fn()])
+
+# def mulby(n):
+#     def gn(val):
+#         return n * val
+#     return gn
+# a = mulby(7)
+# print(a(9))
+
+s = "       lstrip"
+print(s.lstrip())
 
