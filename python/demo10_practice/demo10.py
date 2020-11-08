@@ -111,7 +111,7 @@ import re
 
 # t1 = (("a"), ("b"))
 # t2 = (("c"), ("d"))
-# res = lambda t1, t2: ([i, j] for i, j in zip(t1, t2))
+# res = lambda t1, t2: ({i, j} for i, j in zip(t1, t2))
 # print(dict(res(t1, t2)))
 
 # def fn(c):
@@ -122,10 +122,11 @@ import re
 # dic = {"a": 1, "b": 2, "c": 3}
 # print(sorted(dic.items(), key = lambda x: x[1], reverse=True))
 
-# def fn():
-#     return [lambda x: (i ** x for i in range(4))]
-# # print(fn())
-# print([m(2) for m in fn()])
+def fn():
+    #return [lambda x: i * x for i in range(4)]
+    return [lambda x, i = i: i * x for i in range(4)]
+# print(fn())
+print([m(2) for m in fn()])
 
 # def mulby(n):
 #     def gn(val):
@@ -134,6 +135,32 @@ import re
 # a = mulby(7)
 # print(a(9))
 
-s = "       lstrip"
-print(s.lstrip())
+# s = "       lstrip"
+# print(s.lstrip())
 
+# import copy
+# li = [[1, 2], [3, 4], [5, 6]]
+# new_li = copy.copy(li)
+# new_li2 = copy.deepcopy(li)
+# # li.append([7, 8])
+# li[2][0] = 11
+# print(new_li)
+# print(new_li2)
+
+# def fn(c):
+#     for i in range(c):
+#         yield i ** 2
+# for item in fn(4):
+#     print(item)
+
+# a = [i for i in range(10)]
+# b = [lambda : i for i in range(10)]
+# print(a)
+# #直接输出最后一个数
+# print(b[1]())
+
+# print(eval('2 + 3'))
+
+# li = {"name": "mfh", "age" : "23", "city" : "chengdu"}
+# res = sorted(li.items(), key = lambda x: (x[0], x[1]))
+# print(res)
