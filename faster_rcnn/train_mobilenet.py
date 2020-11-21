@@ -11,7 +11,6 @@ from backbone.mobilenetv2_model import MobileNetV2
 from my_dataset import VOC2012DataSet
 from train_utils import train_eval_utils as utils
 
-
 def create_model(num_classes):
     # https://download.pytorch.org/models/mobilenet_v2-b0353104.pth
     backbone = MobileNetV2(weights_path="./backbone/mobilenet_v2.pth").features
@@ -46,7 +45,8 @@ def main():
         "val": transforms.Compose([transforms.ToTensor()])
     }
 
-    VOC_root = "./"
+    #VOC_root = "./"
+    VOC_root = "/Users/mengfanhui/Downloads/VOCdevkit"
     # check voc root
     if os.path.exists(os.path.join(VOC_root, "VOCdevkit")) is False:
         raise FileNotFoundError("VOCdevkit dose not in path:'{}'.".format(VOC_root))
@@ -60,7 +60,7 @@ def main():
     train_data_loader = torch.utils.data.DataLoader(train_data_set,
                                                     batch_size=batch_size,
                                                     shuffle=True,
-                                                    num_workers=nw,
+                                                    num_workers= nw,
                                                     collate_fn=train_data_set.collate_fn)
 
     # load validation data set
