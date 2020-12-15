@@ -1,4 +1,9 @@
-n = 1516000
-li = list(str(n))
-print(li[::-1])
-print("".join(li[::-1]))
+N = 332
+res = list(str(N))
+res.sort()
+while str(N) != "".join(res):
+    N -= 1
+    res = list(str(N))
+    res.sort()
+    print(N)
+print("".join(res))
