@@ -9,6 +9,7 @@ from draw_box_utils import draw_box
 from PIL import Image
 import json
 import matplotlib.pyplot as plt
+import time
 
 
 def create_model(num_classes):
@@ -43,7 +44,8 @@ print(device)
 model = create_model(num_classes=21)
 
 # load train weights
-train_weights = "./save_weights/model.pth"
+# train_weights = "./save_weights/model.pth"
+train_weights = "D:\GitR\Code-Practice\\faster_rcnn\save_weights\\resNetFpn-model-2.pth"
 model.load_state_dict(torch.load(train_weights)["model"])
 model.to(device)
 
@@ -58,8 +60,9 @@ except Exception as e:
     exit(-1)
 
 # load image
-original_img = Image.open("./test.jpg")
-
+#original_img = Image.open("./test.jpg")
+# original_img = Image.open("D:\GitR\Code-Practice\\faster_rcnn\\2007_000129.jpg")
+original_img = Image.open("D:\GitR\Code-Practice\\faster_rcnn\\2007_000480.jpg")
 # from pil image to tensor, do not normalize image
 data_transform = transforms.Compose([transforms.ToTensor()])
 img = data_transform(original_img)
@@ -68,6 +71,7 @@ img = torch.unsqueeze(img, dim=0)
 
 model.eval()
 with torch.no_grad():
+    time_start = time.time()
     predictions = model(img.to(device))[0]
     predict_boxes = predictions["boxes"].to("cpu").numpy()
     predict_classes = predictions["labels"].to("cpu").numpy()
@@ -85,3 +89,5 @@ with torch.no_grad():
              line_thickness=5)
     plt.imshow(original_img)
     plt.show()
+    time_end = time.time()
+    print('totally cost', time_end - time_start, "s")
