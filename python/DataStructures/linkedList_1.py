@@ -12,4 +12,16 @@ class SingleLinkedList(object):
     '''
     def __init__(self, node = None):
         self.__head = node.elem
-
+    def length(self):
+        cur = self.__head
+        count = 0
+        while cur.next != None:
+            count += 1
+            cur = cur.next
+        return count
+    def travel(self):
+        cur = self.__head
+        count = self.length()
+        for i in range(count):
+            print(cur.elem)
+            cur = cur.next
