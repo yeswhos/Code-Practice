@@ -1,0 +1,74 @@
+## 选择元素的基本方法
+
+1、通过id来选择：
+直接就find_element_by_id就完事了
+
+2、根据class属性，tag名来选择元素：
+也好说，class就是find_element_by_class_name
+tag就是find_element_by_tag_name
+（如果有多个class或者tag，就是find elements，然后用for循环打印出来）
+
+3、获取网页上文本元素
+定位到了文本的标签，然后print(webElement.text)即可，打印出网页元素文本
+
+4、find_element 和 find_elements 的区别
+使用 find_elements 选择的是符合条件的 所有 元素， 如果没有符合条件的元素， 返回空列表
+使用 find_element 选择的是符合条件的 第一个 元素， 如果没有符合条件的元素， 抛出 NoSuchElementException 异常
+
+5、webElement选择元素
+👆上面的都是通过webDriver的方法选择元素，然后返回一个webElement对象。
+通过webElement也可以选择元素，选择的结果就是该webElement范围内的子节点，可以进一步缩小范围。
+
+6、网页元素未加载出来，等待元素出现
+wd.implicitly_wait(10)
+如果找不到元素， 每隔 半秒钟 再去界面上查看一次， 直到找到该元素， 或者 过了10秒 最大时长。
+
+## CSS选择元素
+
+1、CSS Selector 语法就是用来选择元素的。
+通用的方法：
+    通过 CSS Selector 选择单个元素的方法是
+    find_element_by_css_selector(CSS Selector参数)
+
+    选择所有元素的方法是
+    find_elements_by_css_selector(CSS Selector参数)
+
+2、根据tag，class，id选取元素：
+tag名就直接往上写名就行：div
+class写之前加点：.class
+id前面加上# : #id
+
+3、子元素和后代元素：
+    1、如果 inner 是 outer 的 直接子元素， CSS Selector 选择子元素的语法是这样的：outer > inner
+    2、也支持更多层级的选择， 比如：元素1 > 元素2 > 元素3 > 元素4
+    就是选择 元素1 里面的子元素 元素2 里面的子元素 元素3 里面的子元素 元素4 ， 最终选择的元素是 元素4
+    3、如果 inner 是 outer 的 后代元素， CSS Selector 选择后代元素的语法是这样：outer inner
+    （后代元素，不一定非得是直接子元素）
+    4、也支持更多层级的选择， 比如：元素1   元素2   元素3  元素4
+    最终选择的元素是 元素4
+
+4、根据属性值来选择，或者是属性：
+    1、根据属性值用[]，比如 [class='class_name']
+    2、根据属性也是用[]，比如 [class]
+    3、还可以用属性值以什么什么开头来选取元素，比如：a[href^="http"]，就是属性值以http开头的
+    4、还可以 选择 属性值 以某个字符串 结尾 的元素,比如， 要选择a节点，里面的href属性以 gov.cn 结尾 ，就可以这样写 a[href$="gov.cn"]
+    5、如果一个元素具有多个属性，CSS 选择器 可以指定 选择的元素要 同时具有多个属性的限制，比如： div[class=misc][ctype=gun]
+
+5、按照次序选择子节点：
+我们可以指定选择的元素 是父元素的第几个子节点
+    1、nth-child
+    所以这样可以这样写 span:nth-child(2)，就是父节点下第二个且为span类型的子节点
+    如果不想加节点限制，可以写:nth-child(2)，就是父节点下任意一个类型的第二个元素
+    2、p:nth-last-child(1)
+    就是父节点倒数第二个且为p的子节点
+    3、span:nth-of-type(1)
+    就是父节点第二个为span的子节点
+    4、span:nth-last-of-type(1)
+    就是父节点倒数第二个为span的子节点
+    5、p:nth-child(even)
+    父类元素的偶数节点且类型为p
+    6、p:nth-child(odd)
+    父类元素的奇数节点且类型为p
+    7、兄弟节点的选择：
+    h3 + span就是选择 h3 后面紧跟着的兄弟节点 span。
+    选择 h3 后面所有的兄弟节点 span，可以这样写 h3 ~ span
